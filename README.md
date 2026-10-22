@@ -14,7 +14,6 @@ Download the playable ZIP from [Releases](https://github.com/antispam2tor/Defens
 4. Start SteamVR and your headset connection software, then launch Defense Grid normally through Steam.
 5. Load a level and press **F6** to enable VR.  The view will not be centered at first press **F7** to recenter.
 
-No compiler or custom INI file is required to play. To uninstall, close the game and remove the two DLLs supplied by this release, restoring any files you backed up.
 
 ## Controls
 
