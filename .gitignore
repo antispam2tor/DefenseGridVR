@@ -1,0 +1,12 @@
+/build/
+/dist/
+/captures/
+/tools/
+*.log
+*.obj
+*.exp
+*.pdb
+*-backup.dll
+dg1-shader-*.txt
+dg1-tower.ini
+runtime-code.bin

@@ -1,0 +1,24 @@
+name: Build and test
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  windows-x86:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        shell: pwsh
+        run: ./build.ps1
+      - name: Test
+        shell: pwsh
+        run: ./test.ps1
+      - name: Package
+        shell: pwsh
+        run: ./package.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DefenseGridVR-win32
+          path: |
+            dist/*.zip
+            dist/*.sha256
