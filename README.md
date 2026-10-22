@@ -12,7 +12,7 @@ Download the playable ZIP from [Releases](https://github.com/antispam2tor/Defens
 2. Close Defense Grid. In Steam, use **Manage > Browse local files** to locate the folder containing `DefenseGrid.exe`.
 3. Extract the release ZIP there. `d3d9.dll` and `openvr_api.dll` must sit beside `DefenseGrid.exe`. If a file with either name already exists, identify and back it up first. Do not overwrite an unrelated graphics wrapper; wrapper chaining is not implemented.
 4. Start SteamVR and your headset connection software, then launch Defense Grid normally through Steam.
-5. Load a level and press **F6** to enable VR. Use the game's normal mouse/keyboard controls for building and gameplay.
+5. Load a level and press **F6** to enable VR.  The view will not be centered at first press **F7** to recenter.
 
 No compiler or custom INI file is required to play. To uninstall, close the game and remove the two DLLs supplied by this release, restoring any files you backed up.
 
@@ -30,17 +30,6 @@ No compiler or custom INI file is required to play. To uninstall, close the game
 Each visited tower location remembers its last left/right facing direction. Returning through brackets or F9 restores it. Head tracking recenters on arrival. Facing memory resets when VR restarts or the graphics device resets; it is not stored in game saves. The same location is reused if a tower is rebuilt there. Overhead zoom is preserved when visiting a tower and returning. F7 does not reset the native game's camera pan/zoom.
 
 Without a custom calibration, initial tower facing follows the overhead camera's horizontal direction. Adjust it with Left/Right. The mod does not automatically identify the nearby enemy path.
-
-## Compatibility and limitations
-
-- The disappearance fix was tested with the author's Steam executable: x86 PE timestamp `0x510c67e9`, image size `0xc35000`. It additionally checks code signatures. On an unsupported version the visibility hook skips installation; other VR features may run but enemies/platforms can disappear. Other storefronts/builds have not been verified.
-- Visibility expansion bypasses perspective frustum rejection while VR is enabled. It leaves orthographic passes and application-hidden objects alone, but rendering more objects can reduce performance.
-- Rendering uses alternating game frames for the two eyes and CPU readback from D3D9 into D3D11. Fast movement can produce temporal stereo mismatch and performance is not equivalent to a native VR game.
-- Tower detection is based on rendered model transforms, not an engine tower ID. Coverage of every tower type/upgrade is not guaranteed. Keep the visibility fix enabled for broad cycling coverage. Placement is not collision-tested.
-- Gameplay remains mouse/keyboard driven. VR motion-controller interaction is not implemented, and menus/UI are experimental.
-- The DLL writes `dg1-steamvr.log`, `dg1-camera.log` and shader diagnostic files into the game folder. These are not required for distribution. Logs may grow during play.
-
-For problems, include the game version, headset/runtime, steps to reproduce, and relevant log excerpts in an [issue](https://github.com/antispam2tor/DefenseGridVR/issues). Check `dg1-steamvr.log` for the visibility-hook installation or signature-mismatch message.
 
 ## Build from source
 
