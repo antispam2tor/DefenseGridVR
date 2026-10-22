@@ -1,4 +1,4 @@
-# DefenseGridVR
+# Defense Grid: The Awakening VR Mod
 
 An unofficial, experimental SteamVR mod for **Defense Grid: The Awakening** on Windows. Play with a stereoscopic bird's-eye view, or stand beside towers and watch the battle at ground level.
 
