@@ -26,8 +26,6 @@ No compiler or custom INI file is required to play. To uninstall, close the game
 | F9 | Hover a detected tower to stand beside it; press again to return overhead |
 | Left / Right | Hold to rotate in place in tower view |
 | [ / ] | Previous / next detected tower, wrapping around |
-| F10 | Toggle the visibility fix for comparison; enabled by default |
-| F8 | Capture rendering diagnostics |
 
 Each visited tower location remembers its last left/right facing direction. Returning through brackets or F9 restores it. Head tracking recenters on arrival. Facing memory resets when VR restarts or the graphics device resets; it is not stored in game saves. The same location is reused if a tower is rebuilt there. Overhead zoom is preserved when visiting a tower and returning. F7 does not reset the native game's camera pan/zoom.
 
